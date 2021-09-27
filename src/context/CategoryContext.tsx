@@ -18,7 +18,6 @@ const CategoryProvider = (props: { children: any }) => {
         APIget()
     }, [])
 
-
     return (
         <CategoryContext.Provider
             value={{

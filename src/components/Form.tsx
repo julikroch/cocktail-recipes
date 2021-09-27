@@ -1,12 +1,33 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CategoryContext } from '../context/CategoryContext'
+import { Recipes, useRecipesContext } from '../context/RecipesContext'
 
 const Form = () => {
+
+    const [recipes, saveSearch] = useState<Recipes>({
+        ingredient: '',
+        category: ''
+    })
+
     const { categories } = useContext(CategoryContext)
+    const { searchRecipes } = useRecipesContext()
+
+    const getData = (e: any) => {
+        saveSearch({
+            ...recipes,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const saveSubmit = (e: any) => {
+        e.preventDefault()
+        searchRecipes(recipes)
+    }
 
     return (
         <form
             className='col-12'
+            onSubmit={saveSubmit}
         >
             <fieldset className='text-center'>
                 <legend>Search for cocktails by category or ingredient</legend>
@@ -16,14 +37,16 @@ const Form = () => {
                     <input
                         type='text'
                         className='form-control'
-                        name='name'
+                        name='ingredient'
                         placeholder='Search for ingredient'
+                        onChange={getData}
                     />
                 </div>
                 <div className='col-md-4'>
                     <select
                         className='form-control'
                         name='category'
+                        onChange={getData}
                     >
                         <option value=''>-- Select category --</option>
                         {categories.map((category: any) => (
