@@ -1,5 +1,6 @@
 import Form from './components/Form';
 import Header from './components/Header';
+import RecipesList from './components/RecipesList';
 import CategoryProvider from './context/CategoryContext';
 import RecipesProvider from './context/RecipesContext';
 
@@ -12,6 +13,7 @@ function App() {
           <div className='row'>
             <Form />
           </div>
+          <RecipesList />
         </div>
       </RecipesProvider>
     </CategoryProvider>

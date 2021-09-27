@@ -10,7 +10,7 @@ const Form = () => {
     })
 
     const { categories } = useContext(CategoryContext)
-    const { searchRecipes } = useRecipesContext()
+    const { searchRecipes, saveConsult } = useRecipesContext()
 
     const getData = (e: any) => {
         saveSearch({
@@ -22,6 +22,7 @@ const Form = () => {
     const saveSubmit = (e: any) => {
         e.preventDefault()
         searchRecipes(recipes)
+        saveConsult(true)
     }
 
     return (
