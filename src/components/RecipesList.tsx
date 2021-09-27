@@ -7,7 +7,7 @@ const RecipesList = () => {
     const { recipes } = useContext(RecipesContext)
 
     return (
-        <div className="row mt-5">
+        <div className='row mt-5'>
             {recipes.map((recipe: any) => (
                 <Recipe
                     key={recipe.idDrink}

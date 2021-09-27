@@ -1,5 +1,5 @@
-import { useContext, useState } from "react"
-import { ModalContext } from "../context/ModalContext"
+import { useContext, useState } from 'react'
+import { ModalContext } from '../context/ModalContext'
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -43,11 +43,11 @@ const Recipe = (props: { recipe: any }) => {
     const { idDrink, strDrink, strDrinkThumb } = props.recipe
 
     return (
-        <div className="col-md-4 mt-5">
-            <div className="card">
+        <div className='col-md-4 mt-5'>
+            <div className='card'>
                 <img className='card-img-top' src={strDrinkThumb} alt={strDrink} />
                 <h2 className='card-header'>{strDrink}</h2>
-                <div className="card-body">
+                <div className='card-body'>
                     <button
                         className='btn btn-block btn-primary'
                         type='button'
