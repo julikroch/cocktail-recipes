@@ -3,11 +3,13 @@ import Header from './components/Header';
 import RecipesList from './components/RecipesList';
 import CategoryProvider from './context/CategoryContext';
 import RecipesProvider from './context/RecipesContext';
+import ModalProvider from './context/ModalContext';
 
 function App() {
   return (
     <CategoryProvider>
       <RecipesProvider>
+        <ModalProvider>
         <Header />
         <div className='container mt-5'>
           <div className='row'>
@@ -15,6 +17,7 @@ function App() {
           </div>
           <RecipesList />
         </div>
+        </ModalProvider>
       </RecipesProvider>
     </CategoryProvider>
   );

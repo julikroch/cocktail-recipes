@@ -43,7 +43,7 @@ const RecipesProvider = (props: any) => {
             getRecipes()
         }
 
-    }, [search])
+    }, [search, category, consult, ingredient])
 
     return (
         <RecipesContext.Provider
