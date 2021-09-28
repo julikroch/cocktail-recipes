@@ -27,20 +27,13 @@ const Recipe = (props: { recipe: any }) => {
 
     const [modalStyle] = useState(getModalStyle)
     const [open, setOpen] = useState(false)
-
+    const { selectedRecipe, saveRecipe, getRecipe } = useContext(ModalContext)
+    const { idDrink, strDrink, strDrinkThumb } = props.recipe
     const classes = useStyles()
 
-    const handleOpen = () => {
-        setOpen(true)
-    }
+    const handleOpen = () => setOpen(true)
 
-    const handleClose = () => {
-        setOpen(false)
-    }
-
-    const { selectedRecipe, saveRecipe, getRecipe } = useContext(ModalContext)
-
-    const { idDrink, strDrink, strDrinkThumb } = props.recipe
+    const handleClose = () => setOpen(false)
 
     return (
         <div className='col-md-4 mt-5'>
@@ -68,7 +61,7 @@ const Recipe = (props: { recipe: any }) => {
                             <h2>{selectedRecipe.strDrink}</h2>
                             <h3 className='mt-4'>Instructions</h3>
                             <p>{selectedRecipe.strInstructions}</p>
-                            <img style={{width:'100px'}} src={selectedRecipe.strDrinkThumb} alt={selectedRecipe.strDrink} />
+                            <img style={{ width: '100px' }} src={selectedRecipe.strDrinkThumb} alt={selectedRecipe.strDrink} />
                         </div>
                     </Modal>
                 </div>

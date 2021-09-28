@@ -39,10 +39,8 @@ const RecipesProvider = (props: any) => {
                 const result = await axios.get(url)
                 saveRecipes(result.data.drinks)
             }
-
             getRecipes()
         }
-
     }, [search, category, consult, ingredient])
 
     return (
