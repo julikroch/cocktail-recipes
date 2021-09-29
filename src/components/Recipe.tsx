@@ -3,7 +3,7 @@ import { ModalContext } from '../context/ModalContext'
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 
-function getModalStyle() {
+const getModalStyle = () => {
     const top = 50;
     const left = 50;
 
@@ -27,12 +27,11 @@ const Recipe = (props: { recipe: any }) => {
 
     const [modalStyle] = useState(getModalStyle)
     const [open, setOpen] = useState(false)
+    const classes = useStyles()
     const { selectedRecipe, saveRecipe, getRecipe } = useContext(ModalContext)
     const { idDrink, strDrink, strDrinkThumb } = props.recipe
-    const classes = useStyles()
-
+    
     const handleOpen = () => setOpen(true)
-
     const handleClose = () => setOpen(false)
 
     return (
